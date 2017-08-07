@@ -2,11 +2,15 @@
 
 //Import a library to help create a componenet
 import React from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 import Header from './src/components/header.js';
+import AlbumList from './src/components/AlbumList.js';
 // Create a componenet
 const App = () => (
-  <Header />
+  <View>
+    <Header headerText={'Albumz!'} />
+    <AlbumList />
+  </View>
 );
 
 // Render it to the device
