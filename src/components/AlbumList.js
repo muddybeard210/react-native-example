@@ -10,13 +10,20 @@ class AlbumList extends Component {
     .then(response => this.setState({ albums: response.data }));
   }
 
+  renderAlbums() {
+    return this.state.albums.map(album =>
+      /* using album.title as the unique identifier for each album.  Can be anything that is unique.  Best option is to use a unique id if possible (something that mongo already provides...) */
+      <Text key={album.title}>{album.title}</Text>
+    );
+  }
+
   render() {
     console.log('this.state', this.state);
-    console.log('this', this);
+    console.log(this.renderAlbums());
 
     return (
       <View>
-        <Text>Album List!</Text>
+        {this.renderAlbums()}
       </View>
     );
   }
